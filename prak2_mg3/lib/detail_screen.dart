@@ -63,10 +63,10 @@ class DetailScreen extends StatelessWidget {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: <Widget> [
-                    // Padding(
-                    //   padding: const EdgeInsets.all(4.0),
-                    //   child: Image.network('https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'),
-                    // ),
+                    Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Image.network('https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'),
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(4.0),
                       child: Image.asset('asset/img/img1.jpg'),
