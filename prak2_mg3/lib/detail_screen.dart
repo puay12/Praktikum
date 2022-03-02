@@ -63,7 +63,7 @@ class DetailScreen extends StatelessWidget {
               children: <Widget> [
                 Padding(
                   padding: const EdgeInsets.all(4.0),
-                  child: Image.network('https://www.google.com/url?sa=i&url=https%3A%2F%2Fkfmap.asia%2Flandmark%2Fsurabaya-submarine-monument-13183&psig=AOvVaw2nyrcaVTjh5vBRb1c_v3Lf&ust=1646324410659000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJjutr_qp_YCFQAAAAAdAAAAABAD'),
+                  child: Image.network('https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(4.0),

@@ -58,6 +58,10 @@ flutter:
   uses-material-design: true
   assets:
     - asset/img/submarine.jpg 
+    - https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg
+    - asset/img/img1.jpg
+    - asset/img/img2.jpg
+    - asset/img/img3.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:
