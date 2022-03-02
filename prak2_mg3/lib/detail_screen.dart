@@ -40,6 +40,28 @@ class DetailScreen extends StatelessWidget {
                             )),
                       ],
                     ),
+                    Column(
+                      children: const <Widget> [
+                        Icon(Icons.alarm_on_outlined),
+                        Text("08:00 - 16:00",
+                          style: TextStyle(
+                              color: Colors.black45,
+                              fontSize: 12.0,
+                            ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: const <Widget> [
+                        Icon(Icons.payment_outlined),
+                        Text("Rp 10.000,00",
+                          style: TextStyle(
+                              color: Colors.black45,
+                              fontSize: 12.0,
+                            ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
