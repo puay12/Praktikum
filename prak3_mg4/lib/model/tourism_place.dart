@@ -9,3 +9,11 @@ class TourismPlace {
     required this.imageAsset,
   });
 }
+
+var tourismPlaceList = [
+  TourismPlace(
+    name: "Surabaya Submarine Monument", 
+    location: "Jl. Pemuda", 
+    imageAsset: "asset/img/submarine.jpg",
+  ),
+];
