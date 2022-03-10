@@ -47,10 +47,10 @@ var tourismPlaceList = [
     timeopen: "08:00 - 16:00",
     price: "Rp 12.000,00",
     galery: [
-      "asset/img/img1.jpg",
-      "asset/img/img2.jpg",
-      "asset/img/img3.jpg",
-      "asset/img/farmhouse.jpg"
+      "asset/img/klenteng1.jpg",
+      "asset/img/klenteng2.jpg",
+      "asset/img/klenteng3.jpg",
+      "asset/img/klenteng4.jpg"
     ],
   ),
   TourismPlace(
