@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:prak3_mg4/detail_screen.dart';
+import 'package:prak3_mg4/model/tourism_place.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -9,27 +10,33 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Wisata Bandung")),
-      body: SingleChildScrollView(
-        child: InkWell(
-          onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return DetailScreen();
-            }));
-          },
-          child: listItem(),
-        ),
+      body: ListView.builder(
+        itemBuilder: (context, index) {
+          final TourismPlace place = tourismPlaceList[index];
+          return SingleChildScrollView(
+            child: InkWell(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return DetailScreen(place: place);
+                }));
+              },
+              child: listItem(place),
+            ),
+          );
+        },
+        itemCount: tourismPlaceList.length,
       ),
     );
   }
 
-  Widget listItem() {
+  Widget listItem(TourismPlace place) {
     return Card(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Expanded(
             flex: 1,
-            child: Image.asset('asset/img/submarine.jpg'),
+            child: Image.asset(place.imageAsset),
           ),
           Expanded(
             flex: 2,
@@ -40,13 +47,13 @@ class MainScreen extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: const <Widget>[
                   Text(
-                    "Farm House Lembang",
+                    place.name,
                     style: TextStyle(fontSize: 16.0),
                   ),
                   SizedBox(
                     height: 10,
                   ),
-                  Text("Lembang"),
+                  Text(place.location),
                 ],
               ),
             ),
