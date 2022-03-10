@@ -111,10 +111,10 @@ var tourismPlaceList = [
     timeopen: "Everytime",
     price: "Free",
     galery: [
-      "asset/img/img1.jpg",
-      "asset/img/img2.jpg",
-      "asset/img/img3.jpg",
-      "asset/img/farmhouse.jpg"
+      "asset/img/suramadu/s1.jpg",
+      "asset/img/suramadu/s2.jpg",
+      "asset/img/suramadu/s3.jpg",
+      "asset/img/suramadu/s4.jpg"
     ],
   ),
   TourismPlace(
@@ -127,10 +127,10 @@ var tourismPlaceList = [
     timeopen: "12:00 - 20:00",
     price: "Rp 50.000,00",
     galery: [
-      "asset/img/img1.jpg",
-      "asset/img/img2.jpg",
-      "asset/img/img3.jpg",
-      "asset/img/farmhouse.jpg"
+      "asset/img/northquay/n1.jpg",
+      "asset/img/northquay/n2.jpg",
+      "asset/img/northquay/n3.jpg",
+      "asset/img/northquay/n4.jpg"
     ],
   ),
   TourismPlace(
@@ -143,10 +143,10 @@ var tourismPlaceList = [
     timeopen: "10:00 - 20:00",
     price: "Free",
     galery: [
-      "asset/img/img1.jpg",
-      "asset/img/img2.jpg",
-      "asset/img/img3.jpg",
-      "asset/img/farmhouse.jpg"
+      "asset/img/kenjeran/k1.jpg",
+      "asset/img/kenjeran/k2.jpg",
+      "asset/img/kenjeran/k3.jpg",
+      "asset/img/kenjeran/k4.jpg"
     ],
   ),
   TourismPlace(
@@ -159,10 +159,10 @@ var tourismPlaceList = [
     timeopen: "10:00 - 20:00",
     price: "Rp 20.000,00",
     galery: [
-      "asset/img/img1.jpg",
-      "asset/img/img2.jpg",
-      "asset/img/img3.jpg",
-      "asset/img/farmhouse.jpg"
+      "asset/img/jayamahe/j1.jpg",
+      "asset/img/jayamahe/j2.jpg",
+      "asset/img/jayamahe/j3.jpg",
+      "asset/img/jayamahe/j4.jpg"
     ],
   ),
 ];
