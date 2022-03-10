@@ -70,6 +70,10 @@ flutter:
     - asset/img/northquay.jpg
     - asset/img/kenjeran.jpg
     - asset/img/jayamahe.jpg
+    - asset/img/klenteng1.jpg
+    - asset/img/klenteng2.jpg
+    - asset/img/klenteng3.jpg
+    - asset/img/klenteng4.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:
