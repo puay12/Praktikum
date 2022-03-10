@@ -94,20 +94,19 @@ class DetailScreen extends StatelessWidget {
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.network(
-                        'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'),
+                    child: Image.asset(place.galery[0]),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.asset('asset/img/img1.jpg'),
+                    child: Image.asset(place.galery[1]),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.asset('asset/img/img2.jpg'),
+                    child: Image.asset(place.galery[2]),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.asset('asset/img/img3.jpg'),
+                    child: Image.asset(place.galery[3]),
                   ),
                 ],
               ),
