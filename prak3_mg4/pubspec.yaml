@@ -65,6 +65,10 @@ flutter:
     - asset/img/sampoerna.jpeg
     - asset/img/pahlawan.jpg
     - asset/img/patungsby.jpg
+    - asset/img/suramadu.jpg
+    - asset/img/northquay.jpg
+    - asset/img/kenjeran.jpg
+    - asset/img/jayamahe.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:

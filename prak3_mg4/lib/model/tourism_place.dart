@@ -36,4 +36,24 @@ var tourismPlaceList = [
     location: "Wonokromo", 
     imageAsset: "asset/img/patungsby.jpg",
   ),
+  TourismPlace(
+    name: "Jembatan Suramadu", 
+    location: "Perbatasan Surabaya-Madura", 
+    imageAsset: "asset/img/suramadu.jpg",
+  ),
+  TourismPlace(
+    name: "Surabaya North Quay", 
+    location: "Terminal Gapura Surya Nusantara", 
+    imageAsset: "asset/img/northquay.jpg",
+  ),
+  TourismPlace(
+    name: "Jembatan Kenjeran Surabaya", 
+    location: "Kenjeran", 
+    imageAsset: "asset/img/kenjeran.jpg",
+  ),
+  TourismPlace(
+    name: "Monumen Jalesveva Jayamahe", 
+    location: "Armada Timur TNI Angkatan Laut", 
+    imageAsset: "asset/img/jayamahe.jpg",
+  ),
 ];
