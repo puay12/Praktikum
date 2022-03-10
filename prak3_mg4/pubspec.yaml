@@ -57,11 +57,11 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - asset/img/farmhouse.jpg
+    - asset/img/submarine/farmhouse.jpg
     - asset/img/submarine.jpg 
-    - asset/img/img1.jpg
-    - asset/img/img2.jpg
-    - asset/img/img3.jpg
+    - asset/img/submarine/img1.jpg
+    - asset/img/submarine/img2.jpg
+    - asset/img/submarine/img3.jpg
     - asset/img/klenteng.jpg
     - asset/img/sampoerna.jpeg
     - asset/img/pahlawan.jpg
@@ -70,10 +70,10 @@ flutter:
     - asset/img/northquay.jpg
     - asset/img/kenjeran.jpg
     - asset/img/jayamahe.jpg
-    - asset/img/klenteng1.jpg
-    - asset/img/klenteng2.jpg
-    - asset/img/klenteng3.jpg
-    - asset/img/klenteng4.jpg
+    - asset/img/klenteng/klenteng1.jpg
+    - asset/img/klenteng/klenteng2.jpg
+    - asset/img/klenteng/klenteng3.jpg
+    - asset/img/klenteng/klenteng4.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:

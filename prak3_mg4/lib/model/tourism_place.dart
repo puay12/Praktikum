@@ -31,10 +31,10 @@ var tourismPlaceList = [
     timeopen: "08:00 - 16:00",
     price: "Rp 10.000,00",
     galery: [
-      "asset/img/img1.jpg",
-      "asset/img/img2.jpg",
-      "asset/img/img3.jpg",
-      "asset/img/farmhouse.jpg"
+      "asset/img/submarine/img1.jpg",
+      "asset/img/submarine/img2.jpg",
+      "asset/img/submarine/img3.jpg",
+      "asset/img/submarine/farmhouse.jpg"
     ],
   ),
   TourismPlace(
@@ -47,10 +47,10 @@ var tourismPlaceList = [
     timeopen: "08:00 - 16:00",
     price: "Rp 12.000,00",
     galery: [
-      "asset/img/klenteng1.jpg",
-      "asset/img/klenteng2.jpg",
-      "asset/img/klenteng3.jpg",
-      "asset/img/klenteng4.jpg"
+      "asset/img/klenteng/klenteng1.jpg",
+      "asset/img/klenteng/klenteng2.jpg",
+      "asset/img/klenteng/klenteng3.jpg",
+      "asset/img/klenteng/klenteng4.jpg"
     ],
   ),
   TourismPlace(
@@ -63,10 +63,10 @@ var tourismPlaceList = [
     timeopen: "10:00 - 21:00",
     price: "Rp 20.000,00",
     galery: [
-      "asset/img/img1.jpg",
-      "asset/img/img2.jpg",
-      "asset/img/img3.jpg",
-      "asset/img/farmhouse.jpg"
+      "asset/img/sampoerna/s1.jpg",
+      "asset/img/sampoerna/s2.jpg",
+      "asset/img/sampoerna/s3.jpg",
+      "asset/img/sampoerna/s4.jpg"
     ],
   ),
   TourismPlace(
@@ -79,10 +79,10 @@ var tourismPlaceList = [
     timeopen: "10:00 - 17:00",
     price: "Rp 10.000,00",
     galery: [
-      "asset/img/img1.jpg",
-      "asset/img/img2.jpg",
-      "asset/img/img3.jpg",
-      "asset/img/farmhouse.jpg"
+      "asset/img/tugu/t1.jpg",
+      "asset/img/tugu/t2.jpg",
+      "asset/img/tugu/t3.jpg",
+      "asset/img/tugu/t4.jpg"
     ],
   ),
   TourismPlace(
@@ -95,10 +95,10 @@ var tourismPlaceList = [
     timeopen: "Everytime",
     price: "Free",
     galery: [
-      "asset/img/img1.jpg",
-      "asset/img/img2.jpg",
-      "asset/img/img3.jpg",
-      "asset/img/farmhouse.jpg"
+      "asset/img/sby/s1.jpg",
+      "asset/img/sby/s2.jpg",
+      "asset/img/sby/s3.jpg",
+      "asset/img/sby/s4.jpg"
     ],
   ),
   TourismPlace(
