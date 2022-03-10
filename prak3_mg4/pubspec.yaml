@@ -74,6 +74,34 @@ flutter:
     - asset/img/klenteng/klenteng2.jpg
     - asset/img/klenteng/klenteng3.jpg
     - asset/img/klenteng/klenteng4.jpg
+    - asset/img/sampoerna/s1.jpg
+    - asset/img/sampoerna/s2.jpg
+    - asset/img/sampoerna/s3.jpg
+    - asset/img/sampoerna/s4.jpg
+    - asset/img/tugu/t1.jpg
+    - asset/img/tugu/t2.jpg
+    - asset/img/tugu/t3.jpg
+    - asset/img/tugu/t4.jpg
+    - asset/img/sby/s1.jpg
+    - asset/img/sby/s2.jpg
+    - asset/img/sby/s3.jpg
+    - asset/img/sby/s4.jpg
+    - asset/img/suramadu/s1.jpg
+    - asset/img/suramadu/s2.jpg
+    - asset/img/suramadu/s3.jpg
+    - asset/img/suramadu/s4.jpg
+    - asset/img/northquay/n1.jpg
+    - asset/img/northquay/n2.jpg
+    - asset/img/northquay/n3.jpg
+    - asset/img/northquay/n4.jpg
+    - asset/img/kenjeran/k1.jpg
+    - asset/img/kenjeran/k2.jpg
+    - asset/img/kenjeran/k3.jpg
+    - asset/img/kenjeran/k4.jpg
+    - asset/img/jayamahe/j1.jpg
+    - asset/img/jayamahe/j2.jpg
+    - asset/img/jayamahe/j3.jpg
+    - asset/img/jayamahe/j4.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:
