@@ -34,9 +34,9 @@ class DetailScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Column(
-                    children: const <Widget>[
+                    children: <Widget>[
                       Icon(Icons.calendar_today),
-                      Text("Open Everyday",
+                      Text(place.dayopen,
                           style: TextStyle(
                             color: Colors.black45,
                             fontSize: 12.0,
@@ -44,10 +44,10 @@ class DetailScreen extends StatelessWidget {
                     ],
                   ),
                   Column(
-                    children: const <Widget>[
+                    children: <Widget>[
                       Icon(Icons.alarm_on_outlined),
                       Text(
-                        "08:00 - 16:00",
+                        place.timeopen,
                         style: TextStyle(
                           color: Colors.black45,
                           fontSize: 12.0,
@@ -56,10 +56,10 @@ class DetailScreen extends StatelessWidget {
                     ],
                   ),
                   Column(
-                    children: const <Widget>[
+                    children: <Widget>[
                       Icon(Icons.payment_outlined),
                       Text(
-                        "Rp 10.000,00",
+                        place.price,
                         style: TextStyle(
                           color: Colors.black45,
                           fontSize: 12.0,
@@ -81,8 +81,8 @@ class DetailScreen extends StatelessWidget {
               margin: const EdgeInsets.only(
                   top: 16.0, bottom: 16.0, left: 32.0, right: 32),
               padding: const EdgeInsets.all(24.0),
-              child: const Text(
-                "Museum inside a decommissioned Russian war submarine with tours & an adjacent park with cafes. Clean and well maintained. Car park costs 10k, entrance fee 15k/person. You can see KRI Pasopati there. It is a Russian whiskey class. You can also watch the video about the Indonesian Navy at the building beside the submarine.",
+              child: Text(
+                place.desc,
                 textAlign: TextAlign.left,
                 style: TextStyle(fontSize: 14.0),
               ),
