@@ -90,7 +90,7 @@ var tourismPlaceList = [
     location: "Wonokromo",
     imageAsset: "asset/img/patungsby.jpg",
     desc:
-        "The Heroes Monument (Indonesian: Tugu Pahlawan) is a monument in Surabaya, Indonesia. It is the main symbol of the city, dedicated to the people who died during the Battle of Surabaya on 10 November 1945. The 10 November Museum is located under the monument. This monument is 41.15 metres tall and is phallus-shaped. It was built to commemorate the events of 10 November 1945 at the Battle of Surabaya.",
+        "The Sura and Baya Statue (Javanese: Suro lan Boyo Statue) is a statue that is a symbol of the city of Surabaya. This statue is in front of the Surabaya Zoo. This statue consists of these two animals that inspired the name of the city of Surabaya: fish sura (shark) and baya (crocodile).",
     dayopen: "Everyday",
     timeopen: "Everytime",
     price: "Free",
