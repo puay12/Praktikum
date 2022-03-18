@@ -57,39 +57,9 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - asset/img/submarine/farmhouse.jpg
-    - asset/img/submarine.jpg 
-    - asset/img/submarine/img1.jpg
-    - asset/img/submarine/img2.jpg
-    - asset/img/submarine/img3.jpg
-    - asset/img/klenteng.jpg
-    - asset/img/sampoerna.jpeg
-    - asset/img/pahlawan.jpg
-    - asset/img/patungsby.jpg
-    - asset/img/suramadu.jpg
     - asset/img/northquay.jpg
     - asset/img/kenjeran.jpg
     - asset/img/jayamahe.jpg
-    - asset/img/klenteng/klenteng1.jpg
-    - asset/img/klenteng/klenteng2.jpg
-    - asset/img/klenteng/klenteng3.jpg
-    - asset/img/klenteng/klenteng4.jpg
-    - asset/img/sampoerna/s1.jpg
-    - asset/img/sampoerna/s2.jpg
-    - asset/img/sampoerna/s3.jpg
-    - asset/img/sampoerna/s4.jpg
-    - asset/img/tugu/t1.jpg
-    - asset/img/tugu/t2.jpg
-    - asset/img/tugu/t3.jpg
-    - asset/img/tugu/t4.jpg
-    - asset/img/sby/s1.jpg
-    - asset/img/sby/s2.jpg
-    - asset/img/sby/s3.jpg
-    - asset/img/sby/s4.jpg
-    - asset/img/suramadu/s1.jpg
-    - asset/img/suramadu/s2.jpg
-    - asset/img/suramadu/s3.jpg
-    - asset/img/suramadu/s4.jpg
     - asset/img/northquay/n1.jpg
     - asset/img/northquay/n2.jpg
     - asset/img/northquay/n3.jpg
