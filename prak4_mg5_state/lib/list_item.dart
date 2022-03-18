@@ -31,19 +31,29 @@ class ListItem extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Text(
-                    place.name,
-                    style: TextStyle(fontSize: 16.0),
+                children: <Widget> [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          place.name,
+                          style: TextStyle(fontSize: 16.0),
+                        ),
+                      ),
+                      Checkbox(
+                        value: isDone, 
+                        onChanged: onCheckboxClick
+                      ),
+                    ],
                   ),
-                  Checkbox(
-                    value: isDone, 
-                    onChanged: onCheckboxClick
-                  ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Text(place.location),
+                  Text(
+                    place.location,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ],
               ),
             ),
