@@ -81,13 +81,13 @@ class _TourismListState extends State<TourismList> {
               builder: (context, DoneTourismProvider data, widget) {
                 return ListItem(
                   place: place,
-                  isDone: doneTourismPlaceList.contains(place),
+                  isDone: data.doneTourismPlaceList.contains(place),
                   onCheckboxClick: (bool? value) {
                     setState(() {
                       if (value != null) {
                         value
-                            ? doneTourismPlaceList.add(place)
-                            : doneTourismPlaceList.remove(place);
+                            ? data.doneTourismPlaceList.add(place)
+                            : data.doneTourismPlaceList.remove(place);
                       }
                     });
                   },
