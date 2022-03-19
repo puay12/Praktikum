@@ -13,8 +13,6 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  final List<TourismPlace> doneTourismPlaceList = [];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,14 +23,14 @@ class _MainScreenState extends State<MainScreen> {
             icon: const Icon(Icons.done_outline),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return DoneTourismList(
-                    doneTourismPlaceList: doneTourismPlaceList);
-              }));
+                return const DoneTourismList();
+              }),
+              );
             },
           ),
         ],
       ),
-      body: TourismList(doneTourismPlaceList: doneTourismPlaceList),
+      body: TourismList(),
     );
   }
 }
