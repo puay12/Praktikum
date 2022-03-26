@@ -14,9 +14,9 @@ class CardArticle extends StatelessWidget {
       child: ListTile(
         contentPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
         leading: Hero(
-          tag: article.urlToImage!,
+          tag: article.urlToImage,
           child: Image.network(
-            article.urlToImage!,
+            article.urlToImage,
             width: 100,
           ),
         ),
