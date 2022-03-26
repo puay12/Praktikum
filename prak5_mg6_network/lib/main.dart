@@ -23,8 +23,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/' : (context) => ArticleListPage(),
-        '/article_web' : (context) => ArticleWebView(ModalRoute.of(context)?.settings.arguments as Article, url: ''),
-        '/article_detail' : (context) => ArticleDetailPage(ModalRoute.of(context)?.settings.arguments as Article)
+        '/article_web' : (context) => ArticleWebView(),
+        '/article_detail' : (context) => ArticleDetailPage(),
       },
     );
   }

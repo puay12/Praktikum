@@ -1,49 +1,52 @@
+import 'package:meta/meta.dart';
+import 'dart:convert';
+
+Article welcomeFromJson(String str) => Article.fromJson(json.decode(str));
+
 class ArticleResult {
-    ArticleResult({
-        required this.status,
-        required this.totalResults,
-        required this.articles,
-    });
+  ArticleResult({
+    required this.status,
+    required this.totalResults,
+    required this.articles,
+  });
 
-    String status;
-    int totalResults;
-    List<Article> articles;
+  String status;
+  int totalResults;
+  List<Article> articles;
 
-    factory ArticleResult.fromJson(Map<String, dynamic> json) => ArticleResult(
+  factory ArticleResult.fromJson(Map<String, dynamic> json) => ArticleResult(
         status: json["status"],
         totalResults: json["totalResults"],
         articles: List<Article>.from((json["articles"] as List)
-          .map((x) => Article.fromJson(x))
-          .where((article) => 
-            article.author != null &&
-            article.urlToImage != null &&
-            article.publishedAt != null &&
-            article.content != null
-          )
-        ),
-    );
+            .map((x) => Article.fromJson(x))
+            .where((article) =>
+                article.author != null &&
+                article.urlToImage != null &&
+                article.publishedAt != null &&
+                article.content != null)),
+      );
 }
 
 class Article {
-    Article({
-      required this.author,
-      required this.title,
-      required this.description,
-      required this.url,
-      required this.urlToImage,
-      required this.publishedAt,
-      required this.content,
-    });
+  Article({
+    required this.author,
+    required this.title,
+    required this.description,
+    required this.url,
+    required this.urlToImage,
+    required this.publishedAt,
+    required this.content,
+  });
 
-    String author;
-    String title;
-    String description;
-    String url;
-    String urlToImage;
-    DateTime publishedAt;
-    String content;
+  String author;
+  String title;
+  String description;
+  String url;
+  String urlToImage;
+  DateTime publishedAt;
+  String content;
 
-    factory Article.fromJson(Map<String, dynamic> json) => Article(
+  factory Article.fromJson(Map<String, dynamic> json) => Article(
         author: json["author"],
         title: json["title"],
         description: json["description"],
@@ -51,5 +54,5 @@ class Article {
         urlToImage: json["urlToImage"],
         publishedAt: DateTime.parse(json["publishedAt"]),
         content: json["content"],
-    );
+      );
 }

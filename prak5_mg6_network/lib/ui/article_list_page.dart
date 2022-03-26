@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:prak5_mg6_network/data/api/api_service.dart';
@@ -6,10 +7,10 @@ import 'package:prak5_mg6_network/widget/card_article.dart';
 
 class ArticleListPage extends StatefulWidget {
   @override
-  _ArticleListPageState createState() => _ArticleListPageState();
+  State<ArticleListPage> createState() => _ArticleListPageState();
 }
 
-class _ArticleListPageState extends _ArticleListPageState {
+class _ArticleListPageState extends State<ArticleListPage> {
   late Future<ArticleResult> _article;
 
   @override

@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:prak5_mg6_network/data/model/article.dart';
@@ -5,12 +6,12 @@ import 'package:prak5_mg6_network/ui/article_web_view.dart';
 
 class ArticleDetailPage extends StatelessWidget {
   static const routeName = '/article_detail';
-  final Article article;
 
-  const ArticleDetailPage(this.article);
+  const ArticleDetailPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final article = ModalRoute.of(context)!.settings.arguments as Article;
     return Scaffold(
       appBar: AppBar(
         title: Text(
