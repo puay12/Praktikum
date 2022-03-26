@@ -50,7 +50,7 @@ class ArticleDetailPage extends StatelessWidget {
                   ),
                   Divider(color: Colors.grey),
                   Text(
-                    article.content ?? "",
+                    article.content,
                     style: Theme.of(context).textTheme.bodyText1,
                   ),
                   SizedBox(height: 10),
