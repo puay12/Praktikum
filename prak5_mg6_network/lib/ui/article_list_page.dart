@@ -1,5 +1,3 @@
-import 'dart:developer';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:prak5_mg6_network/data/api/api_service.dart';
 import 'package:prak5_mg6_network/data/model/article.dart';

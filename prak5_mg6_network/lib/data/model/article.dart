@@ -1,4 +1,3 @@
-import 'package:meta/meta.dart';
 import 'dart:convert';
 
 Article welcomeFromJson(String str) => Article.fromJson(json.decode(str));

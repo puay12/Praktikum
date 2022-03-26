@@ -1,7 +1,4 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
-import 'package:prak5_mg6_network/data/model/article.dart';
 import 'package:prak5_mg6_network/ui/article_detail_page.dart';
 import 'package:prak5_mg6_network/ui/article_list_page.dart';
 import 'package:prak5_mg6_network/ui/article_web_view.dart';
