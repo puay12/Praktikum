@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "62383626719",
+    "project_id": "garaptugas-76b61",
+    "storage_bucket": "garaptugas-76b61.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:62383626719:android:63b7da261f9f9504b60c6a",
+        "android_client_info": {
+          "package_name": "com.example.prak5_mg7_crud"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "62383626719-ii3s92d7v3ja7frhd797j6oh3ikjf5fg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM9MVAMdBjRI_iHPznyjp0OtTdqYe6RLE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "62383626719-ii3s92d7v3ja7frhd797j6oh3ikjf5fg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
