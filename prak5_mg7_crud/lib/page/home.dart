@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                   child: Text('Update'),
                   onPressed: () async {
                     final String? nama = _namaController.text;
-                    final int? harga = int.tryParse(_hargaController.text);
+                    final double? harga = double.tryParse(_hargaController.text);
                     final String? lokasi = _lokasiController.text;
                     final String? jam = _jamController.text;
                     final String? img = _imgController.text;

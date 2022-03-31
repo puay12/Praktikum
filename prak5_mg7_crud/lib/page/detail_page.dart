@@ -15,7 +15,6 @@ class DetailScreen extends StatelessWidget {
 
     return Scaffold(
         body: SingleChildScrollView(
-      child: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
@@ -84,6 +83,6 @@ class DetailScreen extends StatelessWidget {
           ],
         ),
       ),
-    ));
+    );
   }
 }

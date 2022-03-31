@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:prak5_mg7_crud/page/detail_page.dart';
 
 class FormPage extends StatefulWidget {
   static const routeName = '/tambah';
@@ -73,7 +72,7 @@ class _FormPageState extends State<FormPage> {
                 child: Text('Simpan Tempat Wisata'),
                 onPressed: () async {
                   final String? nama = _namaController.text;
-                  final int? harga = int.tryParse(_hargaController.text);
+                  final double? harga = double.tryParse(_hargaController.text);
                   final String? lokasi = _lokasiController.text;
                   final String? jam = _jamController.text;
                   final String? img = _imgController.text;
