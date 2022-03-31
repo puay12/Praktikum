@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
         '/tambah':(context) => const FormPage(),
         '/detail':(context) => DetailScreen()
       },
+      debugShowCheckedModeBanner: false,
     );
   }
 }
