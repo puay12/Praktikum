@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:prak5_mg7_crud/page/detail_page.dart';
+import 'package:prak5_mg7_crud/page/form_page.dart';
 import 'package:prak5_mg7_crud/page/home.dart';
 
 void main() async {
@@ -19,7 +21,12 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.purple,
         fontFamily: 'Poppins'
       ),
-      home: const HomePage(),
+      initialRoute: '/',
+      routes: {
+        '/':(context) => HomePage(),
+        '/tambah':(context) => FormPage(),
+        '/detail':(context) => DetailScreen()
+      },
     );
   }
 }

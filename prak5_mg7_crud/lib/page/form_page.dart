@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:prak5_mg7_crud/page/detail_page.dart';
 
 class FormPage extends StatefulWidget {
-  static const routeName = '/form';
+  static const routeName = '/tambah';
 
   const FormPage({Key? key}) : super(key: key);
 

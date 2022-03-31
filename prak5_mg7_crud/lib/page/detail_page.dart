@@ -3,27 +3,26 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DetailScreen extends StatelessWidget {
   static const routeName = '/detail';
+  DetailScreen({Key? key}) : super(key: key);
 
-  DetailScreen({Key? key, required this.product_id}) : super(key: key);
-
-  late String product_id;
-
-  Future
+  final CollectionReference _collectionRef =
+    FirebaseFirestore.instance.collection('collection');
   
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      body: SingleChildScrollView(
-        child: SafeArea(
+    final place = ModalRoute.of(context)!.settings.arguments as DocumentSnapshot;
+
+    return SingleChildScrollView(
+      child: Scaffold(
+        body: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Image.network(),
+              Image.network(place['img']),
               Container(
                 margin: EdgeInsets.only(top: 24.0, bottom: 16.0),
                 child: Text(
-                  ,
+                  place['nama'],
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 20.0,
@@ -38,30 +37,21 @@ class DetailScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     Column(
-                      children: const <Widget>[
-                        Icon(Icons.calendar_today),
-                        Text("Open Everyday",
-                            style: TextStyle(
-                              color: Colors.black45,
-                              fontSize: 12.0,
-                            )),
-                      ],
-                    ),
-                    Column(
-                      children: const <Widget> [
+                      children: <Widget> [
                         Icon(Icons.alarm_on_outlined),
-                        Text("08:00 - 16:00",
+                        Text(
+                          place['jam_operasional'],
                           style: TextStyle(
                               color: Colors.black45,
                               fontSize: 12.0,
-                            ),
+                          ),
                         ),
                       ],
                     ),
                     Column(
-                      children: const <Widget> [
+                      children: <Widget> [
                         Icon(Icons.payment_outlined),
-                        Text("Rp 10.000,00",
+                        Text("Rp $place['harga_tiket']",
                           style: TextStyle(
                               color: Colors.black45,
                               fontSize: 12.0,
@@ -82,16 +72,16 @@ class DetailScreen extends StatelessWidget {
                 ),
                 margin: const EdgeInsets.only(top: 16.0, bottom: 16.0, left: 32.0, right: 32),
                 padding: const EdgeInsets.all(24.0),
-                child: const Text(
-                  "Museum inside a decommissioned Russian war submarine with tours & an adjacent park with cafes. Clean and well maintained. Car park costs 10k, entrance fee 15k/person. You can see KRI Pasopati there. It is a Russian whiskey class. You can also watch the video about the Indonesian Navy at the building beside the submarine.",
+                child: Text(
+                  place['desc'],
                   textAlign: TextAlign.left,
                   style: TextStyle(fontSize: 14.0),
                 ),
               ),
             ],
           ),
-        ) 
-      ), 
-    );
+        )  
+      ),
+    ); 
   }
 }

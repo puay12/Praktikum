@@ -159,7 +159,7 @@ class _HomePageState extends State<HomePage> {
                       margin: const EdgeInsets.all(10),
                       child: InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, DetailScreen.routeName, arguments: _productss.id);
+                          Navigator.pushNamed(context, DetailScreen.routeName, arguments: documentSnapshot);
                         },
                         child:  Row(
                           children: <Widget> [
@@ -234,7 +234,7 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, FormPage.routeName, arguments: _productss);
+          Navigator.pushNamed(context, FormPage.routeName);
         },
         tooltip: 'Tambah Wishlist',
         child: const Icon(Icons.add),
