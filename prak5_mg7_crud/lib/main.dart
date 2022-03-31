@@ -23,8 +23,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/':(context) => HomePage(),
-        '/tambah':(context) => FormPage(),
+        '/':(context) => const HomePage(),
+        '/tambah':(context) => const FormPage(),
         '/detail':(context) => DetailScreen()
       },
     );
