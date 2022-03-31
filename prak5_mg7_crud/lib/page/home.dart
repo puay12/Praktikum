@@ -162,65 +162,65 @@ class _HomePageState extends State<HomePage> {
                           Navigator.pushNamed(context, DetailScreen.routeName, arguments: _productss.id);
                         },
                         child:  Row(
-                            children: <Widget> [
-                              Expanded(
-                                flex: 1,
-                                child: Image.network(documentSnapshot['img']),
-                              ),
-                              Expanded(
-                                flex: 2,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: <Widget> [
-                                      Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Expanded(
-                                            child: Text(
-                                              documentSnapshot['nama'],
-                                              style: TextStyle(
-                                                fontSize: 14.0,
-                                                fontWeight: FontWeight.bold
-                                              ),
+                          children: <Widget> [
+                            Expanded(
+                              flex: 1,
+                              child: Image.network(documentSnapshot['img']),
+                            ),
+                            Expanded(
+                              flex: 2,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: <Widget> [
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Expanded(
+                                          child: Text(
+                                            documentSnapshot['nama'],
+                                            style: TextStyle(
+                                              fontSize: 14.0,
+                                              fontWeight: FontWeight.bold
                                             ),
                                           ),
-                                          // Press this button to edit a single product
-                                          IconButton(
-                                            icon: const Icon(Icons.edit),
-                                            onPressed: () =>
-                                              _update(documentSnapshot)
-                                          ),
-                                          // This icon button is used to delete a single product
-                                          IconButton(
-                                            icon: const Icon(Icons.delete),
-                                            onPressed: () =>
-                                              _deleteProduct(documentSnapshot.id)
-                                          ),
-                                        ],
-                                      ),
-                                      const SizedBox(
-                                        height: 10,
-                                      ),
-                                      Text(
-                                        documentSnapshot['lokasi'],
-                                        style: TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 12.0
                                         ),
+                                        // Press this button to edit a single product
+                                        IconButton(
+                                          icon: const Icon(Icons.edit),
+                                          onPressed: () =>
+                                            _update(documentSnapshot)
+                                        ),
+                                        // This icon button is used to delete a single product
+                                        IconButton(
+                                          icon: const Icon(Icons.delete),
+                                          onPressed: () =>
+                                            _deleteProduct(documentSnapshot.id)
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    Text(
+                                      documentSnapshot['lokasi'],
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 12.0
                                       ),
-                                      Text(
-                                        documentSnapshot['desc'],
-                                        overflow: TextOverflow.ellipsis,
-                                        style: TextStyle(color: Colors.grey),
-                                      ),
-                                    ],
-                                  ),
+                                    ),
+                                    Text(
+                                      documentSnapshot['desc'],
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(color: Colors.grey),
+                                    ),
+                                  ],
                                 ),
                               ),
-                            ],
+                            ),
+                          ],
                         ),
                       ),
                     );
