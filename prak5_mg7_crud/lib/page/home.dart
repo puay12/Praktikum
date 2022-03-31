@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:prak5_mg7_crud/page/detail_page.dart';
+import 'package:prak5_mg7_crud/page/form_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,6 +11,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  static const routeName = '/';
+
   final TextEditingController _namaController = TextEditingController();
   final TextEditingController _descController = TextEditingController();
   final TextEditingController _lokasiController = TextEditingController();
@@ -18,10 +22,8 @@ class _HomePageState extends State<HomePage> {
   final CollectionReference _productss =
       FirebaseFirestore.instance.collection('tmpt_wisata');
 
-  Future<void> _createOrUpdate([DocumentSnapshot? documentSnapshot]) async {
-    String action = 'create';
+  Future<void> _update([DocumentSnapshot? documentSnapshot]) async {
     if (documentSnapshot != null) {
-      action = 'update';
       _namaController.text = documentSnapshot['nama'];
       _descController.text = documentSnapshot['desc'];
       _lokasiController.text = documentSnapshot['lokasi'];
@@ -79,33 +81,44 @@ class _HomePageState extends State<HomePage> {
                 height: 20,
               ),
               ElevatedButton(
-                child: Text(action == 'create' ? 'Create' : 'Update'),
+                child: Text('Update'),
                 onPressed: () async {
                   final String? nama = _namaController.text;
                   final double? harga =
                       double.tryParse(_hargaController.text);
-                  if (nama != null && harga != null) {
-                    if (action == 'create') {
-                      // Persist a new product to Firestore
-                      await _productss
-                          .add({"nama": nama, "harga_tiket": harga});
-                    }
-
-                    if (action == 'update') {
+                  final String? lokasi = _lokasiController.text;
+                  final String? jam = _jamController.text;
+                  final String? img = _imgController.text;
+                  final String? desc = _descController.text;
+                  if (nama != null &&
+                      harga != null &&
+                      lokasi != null &&
+                      jam != null &&
+                      img != null &&
+                      desc != null) {
                       // Update the product
-                      await _productss
-                          .doc(documentSnapshot!.id)
-                          .update({"nama": nama, "harga_tiket": harga});
+                      await _productss.doc(documentSnapshot!.id).update({
+                        "nama": nama,
+                        "harga_tiket": harga,
+                        "desc": desc,
+                        "lokasi": lokasi,
+                        "jam_operasional": jam,
+                        "img": img
+                      });
                     }
 
                     // Clear the text fields
                     _namaController.text = '';
                     _hargaController.text = '';
+                    _descController.text = '';
+                    _lokasiController.text = '';
+                    _hargaController.text = '';
+                    _jamController.text = '';
+                    _imgController.text = '';
 
                     // Hide the bottom sheet
                     Navigator.of(context).pop();
-                  }
-                },
+                }
               )
             ],
           ),
@@ -119,10 +132,8 @@ class _HomePageState extends State<HomePage> {
     await _productss.doc(productId).delete();
 
     // Show a snackbar
-    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-        content: Text('You have successfully deleted a product')
-      )
-    );
+    ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Berhasil menghapus tempat wisata!')));
   }
 
   @override
@@ -130,10 +141,11 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Wisata Indonesia",
+          "Wishlist Wisata Indonesia",
         ),
       ),
       body: Container(
+        margin: EdgeInsets.all(10.0),
         child: StreamBuilder(
             stream: _productss.snapshots(),
             builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
@@ -145,35 +157,87 @@ class _HomePageState extends State<HomePage> {
                         streamSnapshot.data!.docs[index];
                     return Card(
                       margin: const EdgeInsets.all(10),
-                      child: ListTile(
-                        title: Text(documentSnapshot['nama']),
-                        subtitle: Text(documentSnapshot['harga_tiket'].toString()),
-                        trailing: SizedBox(
-                          width: 100,
-                          child: Row(
-                            children: [
-                              // Press this button to edit a single product
-                              IconButton(
-                                  icon: const Icon(Icons.edit),
-                                  onPressed: () =>
-                                      _createOrUpdate(documentSnapshot)),
-                              // This icon button is used to delete a single product
-                              IconButton(
-                                  icon: const Icon(Icons.delete),
-                                  onPressed: () =>
-                                      _deleteProduct(documentSnapshot.id)),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, DetailScreen.routeName, arguments: _productss.id);
+                        },
+                        child:  Row(
+                            children: <Widget> [
+                              Expanded(
+                                flex: 1,
+                                child: Image.network(documentSnapshot['img']),
+                              ),
+                              Expanded(
+                                flex: 2,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: <Widget> [
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Expanded(
+                                            child: Text(
+                                              documentSnapshot['nama'],
+                                              style: TextStyle(
+                                                fontSize: 14.0,
+                                                fontWeight: FontWeight.bold
+                                              ),
+                                            ),
+                                          ),
+                                          // Press this button to edit a single product
+                                          IconButton(
+                                            icon: const Icon(Icons.edit),
+                                            onPressed: () =>
+                                              _update(documentSnapshot)
+                                          ),
+                                          // This icon button is used to delete a single product
+                                          IconButton(
+                                            icon: const Icon(Icons.delete),
+                                            onPressed: () =>
+                                              _deleteProduct(documentSnapshot.id)
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(
+                                        documentSnapshot['lokasi'],
+                                        style: TextStyle(
+                                          color: Colors.grey,
+                                          fontSize: 12.0
+                                        ),
+                                      ),
+                                      Text(
+                                        documentSnapshot['desc'],
+                                        overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(color: Colors.grey),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                             ],
-                          ),
                         ),
                       ),
                     );
-                  },
+                  }
                 );
               } else {
                 return Text("Gagal wes");
               }
             }
-          ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, FormPage.routeName, arguments: _productss);
+        },
+        tooltip: 'Tambah Wishlist',
+        child: const Icon(Icons.add),
       ),
     );
   }
