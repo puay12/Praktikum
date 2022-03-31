@@ -51,7 +51,7 @@ class _FormPageState extends State<FormPage> {
               ),
               TextField(
                 keyboardType:
-                    const TextInputType.numberWithOptions(decimal: true),
+                    const TextInputType.numberWithOptions(decimal: false),
                 controller: _hargaController,
                 decoration: const InputDecoration(
                   labelText: 'Harga Tiket',
@@ -73,7 +73,7 @@ class _FormPageState extends State<FormPage> {
                 child: Text('Simpan Tempat Wisata'),
                 onPressed: () async {
                   final String? nama = _namaController.text;
-                  final double? harga = double.tryParse(_hargaController.text);
+                  final int? harga = int.tryParse(_hargaController.text);
                   final String? lokasi = _lokasiController.text;
                   final String? jam = _jamController.text;
                   final String? img = _imgController.text;
