@@ -81,21 +81,21 @@ class _HomePageState extends State<HomePage> {
                 height: 20,
               ),
               ElevatedButton(
-                child: Text('Update'),
-                onPressed: () async {
-                  final String? nama = _namaController.text;
-                  final double? harga =
-                      double.tryParse(_hargaController.text);
-                  final String? lokasi = _lokasiController.text;
-                  final String? jam = _jamController.text;
-                  final String? img = _imgController.text;
-                  final String? desc = _descController.text;
-                  if (nama != null &&
-                      harga != null &&
-                      lokasi != null &&
-                      jam != null &&
-                      img != null &&
-                      desc != null) {
+                  child: Text('Update'),
+                  onPressed: () async {
+                    final String? nama = _namaController.text;
+                    final double? harga =
+                        double.tryParse(_hargaController.text);
+                    final String? lokasi = _lokasiController.text;
+                    final String? jam = _jamController.text;
+                    final String? img = _imgController.text;
+                    final String? desc = _descController.text;
+                    if (nama != null &&
+                        harga != null &&
+                        lokasi != null &&
+                        jam != null &&
+                        img != null &&
+                        desc != null) {
                       // Update the product
                       await _productss.doc(documentSnapshot!.id).update({
                         "nama": nama,
@@ -118,8 +118,7 @@ class _HomePageState extends State<HomePage> {
 
                     // Hide the bottom sheet
                     Navigator.of(context).pop();
-                }
-              )
+                  })
             ],
           ),
         );
@@ -151,86 +150,84 @@ class _HomePageState extends State<HomePage> {
             builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
               if (streamSnapshot.hasData) {
                 return ListView.builder(
-                  itemCount: streamSnapshot.data!.docs.length,
-                  itemBuilder: (context, index) {
-                    final DocumentSnapshot documentSnapshot =
-                        streamSnapshot.data!.docs[index];
-                    return Card(
-                      margin: const EdgeInsets.all(10),
-                      child: InkWell(
+                    itemCount: streamSnapshot.data!.docs.length,
+                    itemBuilder: (context, index) {
+                      final DocumentSnapshot documentSnapshot =
+                          streamSnapshot.data!.docs[index];
+                      return InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, DetailScreen.routeName, arguments: documentSnapshot);
+                          Navigator.pushNamed(context, DetailScreen.routeName,
+                              arguments: documentSnapshot);
                         },
-                        child:  Row(
-                          children: <Widget> [
-                            Expanded(
-                              flex: 1,
-                              child: Image.network(documentSnapshot['img']),
-                            ),
-                            Expanded(
-                              flex: 2,
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: <Widget> [
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Expanded(
-                                          child: Text(
-                                            documentSnapshot['nama'],
-                                            style: TextStyle(
-                                              fontSize: 14.0,
-                                              fontWeight: FontWeight.bold
+                        child: Card(
+                          margin: const EdgeInsets.all(10.0),
+                          child: Row(
+                            children: <Widget>[
+                              Expanded(
+                                flex: 1,
+                                child: Image.network(documentSnapshot['img']),
+                              ),
+                              Expanded(
+                                flex: 2,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: <Widget>[
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          Expanded(
+                                            child: Text(
+                                              documentSnapshot['nama'],
+                                              style: TextStyle(
+                                                  fontSize: 14.0,
+                                                  fontWeight: FontWeight.bold),
                                             ),
                                           ),
-                                        ),
-                                        // Press this button to edit a single product
-                                        IconButton(
-                                          icon: const Icon(Icons.edit),
-                                          onPressed: () =>
-                                            _update(documentSnapshot)
-                                        ),
-                                        // This icon button is used to delete a single product
-                                        IconButton(
-                                          icon: const Icon(Icons.delete),
-                                          onPressed: () =>
-                                            _deleteProduct(documentSnapshot.id)
-                                        ),
-                                      ],
-                                    ),
-                                    const SizedBox(
-                                      height: 10,
-                                    ),
-                                    Text(
-                                      documentSnapshot['lokasi'],
-                                      style: TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: 12.0
+                                          // Press this button to edit a single product
+                                          IconButton(
+                                              icon: const Icon(Icons.edit),
+                                              iconSize: 20.0,
+                                              onPressed: () =>
+                                                  _update(documentSnapshot)),
+                                          // This icon button is used to delete a single product
+                                          IconButton(
+                                              icon: const Icon(Icons.delete),
+                                              iconSize: 20.0,
+                                              onPressed: () => _deleteProduct(
+                                                  documentSnapshot.id)),
+                                        ],
                                       ),
-                                    ),
-                                    Text(
-                                      documentSnapshot['desc'],
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(color: Colors.grey),
-                                    ),
-                                  ],
+                                      Text(
+                                        documentSnapshot['lokasi'],
+                                        style: TextStyle(
+                                            color: Colors.grey, fontSize: 9.0),
+                                      ),
+                                      Text(
+                                        documentSnapshot['desc'],
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 2,
+                                        style: TextStyle(
+                                            color: Colors.black54,
+                                            fontSize: 12.0),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                    );
-                  }
-                );
+                      );
+                    });
               } else {
                 return Text("Gagal wes");
               }
-            }
-        ),
+            }),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

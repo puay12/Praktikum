@@ -29,7 +29,7 @@ class _FormPageState extends State<FormPage> {
           "Tambah Wishlist",
         ),
       ),
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
