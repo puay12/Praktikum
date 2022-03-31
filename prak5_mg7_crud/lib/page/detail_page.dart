@@ -12,9 +12,9 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final place = ModalRoute.of(context)!.settings.arguments as DocumentSnapshot;
 
-    return SingleChildScrollView(
-      child: Scaffold(
-        body: SafeArea(
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
@@ -80,8 +80,8 @@ class DetailScreen extends StatelessWidget {
               ),
             ],
           ),
-        )  
-      ),
+        ),
+      )  
     ); 
   }
 }
